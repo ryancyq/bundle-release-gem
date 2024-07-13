@@ -43,7 +43,7 @@ runs:
         git_tag_version=$(ruby -rbundler -e "puts Bundler::GemHelper.new.send(:version_tag)")
         echo "GEM_VERSION=$gem_version" >> "$GITHUB_OUTPUT"
         echo "GIT_TAG_VERSION=$git_tag_version" >> "$GITHUB_OUTPUT"
-        echo "GIT_RELEASE_BRANCH=$BRANCH_PREFIX/$GIT_TAG_VERSION" >> "$GITHUB_OUTPUT"
+        echo "GIT_RELEASE_BRANCH=$BRANCH_PREFIX/$git_tag_version" >> "$GITHUB_OUTPUT"
 
     - name: Checkout new release branch
       shell: bash
