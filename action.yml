@@ -80,6 +80,6 @@ runs:
       env:
         REMOTE: ${{ inputs.git-remote }}
         BRANCH: ${{ steps.release-info.outputs.GIT_RELEASE_BRANCH }}
-      if: ${{ steps.release-branch.outputs.BRANCH_EXISTS == "true" }}
+      if: ${{ steps.release-branch.outputs.BRANCH_EXISTS == 'true' }}
       run: |
         git push -d $REMOTE refs/heads/$BRANCH
