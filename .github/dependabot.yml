@@ -5,11 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "bundler" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "weekly"
-    ignore:
-      # For all packages, ignore all patch updates
-      - dependency-name: '*'
-        update-types: ['version-update:semver-patch']
+    commit-message:
+      prefix: "chore:"
+    labels:
+      - "dependabot: ecosystem : github actions"
+      - "dependabot: dependencies"
